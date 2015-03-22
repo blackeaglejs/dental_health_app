@@ -3,6 +3,6 @@ class DentalController < ApplicationController
 	end
 
 	def show
-		@page = babyteeth
+		
 	end
 end

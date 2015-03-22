@@ -1,5 +1,10 @@
 <h1>Taking Care of your Child's Teeth: An Introduction</h1>
 
+<% if !user_signed_in? %>
+	<p>Want to manage your child's dental health? <%= link_to 'Sign up here!', new_user_registration_path %></p>
+	<p>Coming back to add more data? <%= link_to "Please sign in!", new_user_session_path %></p>
+<% end %>
+
 <h2>The Importance of Baby Teeth</h2>
 <p>Baby teeth play a vital role in holding the space for permanent teeth. In addition, they allow your child to eat and learn to talk.</p>
 
