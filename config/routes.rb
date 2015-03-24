@@ -2,6 +2,17 @@ Rails.application.routes.draw do
   devise_for :users
   root 'dental#index'
   resources :dental
+
+  #These routes are for the tutorial 
+  get '/babyteeth' => 'tutorial#babyteeth'
+  get '/cav_intro' => 'tutorial#cav_intro'
+  get '/cav_form_1' => 'tutorial#cav_form_1'
+  get '/cav_form_2' => 'tutorial#cav_form_2'
+  get '/cav_form_3' => 'tutorial#cav_form_3'
+  get '/cav_form_4' => 'tutorial#cav_form_4'
+  get '/cav_prev_1' => 'tutorial#cav_prev_1'
+  get '/cav_prev_2' => 'tutorial#cav_prev_2'
+  get '/cav_prev_3' => 'tutorial#cav_prev_3'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

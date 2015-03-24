@@ -3,6 +3,5 @@ class DentalController < ApplicationController
 	end
 
 	def show
-		
 	end
 end

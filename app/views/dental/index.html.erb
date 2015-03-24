@@ -3,27 +3,10 @@
 <% if !user_signed_in? %>
 	<p>Want to manage your child's dental health? <%= link_to 'Sign up here!', new_user_registration_path %></p>
 	<p>Coming back to add more data? <%= link_to "Please sign in!", new_user_session_path %></p>
+<% else %>
+	<p>Enter new brushing/flossing/mouthwash records</p>
+	<p>View all of brushing/flossing/mouthwsahing records</p>
 <% end %>
 
-<h2>The Importance of Baby Teeth</h2>
-<p>Baby teeth play a vital role in holding the space for permanent teeth. In addition, they allow your child to eat and learn to talk.</p>
+<%= link_to "Take the Tutorial!", babyteeth_path %>
 
-<h2>Cavities</h2>
-<h3>What are they?</h3>
-Bacteria in our mouth break down sugars and produce acid leading to cavities. Cavities appear as white, yellow, brown, or black spots on the front or tops of teeth.
-<h3>How do they form?</h3>
-<h4>Poor Oral Hygiene</h4>
-<p>Once a child has a cavity, it is more likely that the child will develop more cavities because the bacteria spread from one tooth to another. One way to detect if you child is prone to cavities is visible plaque on the upper front teeth. Plaque is a soft, sticky biofilm made up of bacteria and bacterial products, is off white to light yellow in color, and usually starts building up closest to the gums. </p>
-<h4>Diet</h4>
-<p>Sugars throughout the day can also cause cavities to form, so limit your child’s sugar intake to meal times and avoid sugars at snack times. Candy, sweets, and desserts are one form of sugar, but juice, soda and other sweet drinks are another way sugar is introduced into the child’s diet. Juice consumption should be limited to 4-6 ounces per day and only with meals. Drinking water and eating healthy snacks such as fruits and vegetables can help prevent cavities.</p>
-<h4>Milk at Night</h4>
-<p>Although milk is healthy to help your child grow, your child should not take a bottle of milk or breast milk to bed. If your child drinks milk before bed, it is important to brush their teeth AFTER to prevent cavities from forming. Only water is allowed after brushing your child’s teeth at night.</p>
-<h4>Transmission through Food Sharing</h4>
-<p>Since cavities can transfer from person to person, it is important not to share food or utensils with your child, or allow siblings to share with each other, because bacteria can spread between mouths. Also, address your own dental needs and maintain good oral hygiene to reduce the child’s exposure to cavity-causing bacteria.</p>
-<h3>How do we prevent them?</h3>
-<h4>Fluoride!</h4>
-<p>Fluoride is like a vitamin for teeth! Miami-Dade county has safe levels in the water, so it is a good idea to give your child tap water.</p>
-<h4>Brushing!</h4>
-<p>If your child is under 6.5 years old, you should brush with your child for two minutes in the morning and before bed. Below this age, they usually don’t have the manual dexterity to brush by themselves. Toothpaste should contain fluoride, and using a smear of toothpaste for children aged 0-2 and a pea-sized amount for children aged 2-5 will protect your child’s teeth.</p>
-<h4>Regular Dental Checkups</h4>
-<p>Make sure you have a dental home where you can take your child for regular visits every 6 months. At the dentist you can receive counseling about appropriate diet, oral hygiene and oral development. The dentist will also take x-rays and do a thorough clinical exam to catch the cavities while they are small. This can help prevent the spread of cavities to other teeth.</p>
