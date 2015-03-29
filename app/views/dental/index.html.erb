@@ -4,6 +4,7 @@
 	<p>Want to manage your child's dental health? <%= link_to 'Sign up here!', new_user_registration_path %></p>
 	<p>Coming back to add more data? <%= link_to "Please sign in!", new_user_session_path %></p>
 <% else %>
+	<p><%= link_to "Create Your Profile", new_profile_path %></p>
 	<p>Enter new brushing/flossing/mouthwash records</p>
 	<p>View all of brushing/flossing/mouthwsahing records</p>
 <% end %>

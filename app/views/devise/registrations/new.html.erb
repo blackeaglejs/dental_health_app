@@ -20,21 +20,10 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
-<br>
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %> 
-  </div>
-<br>
-  <div class="field">
-    <%= f.label "I am a..." %>
-    <%= f.select(:role, [['Patient',1],['Parent',2],['Dental Staff',3]]) %>.
-  </div>
-<br>
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
   <br>
-<% end %>
+  <div class="actions">
+    <%= f.submit "Sign Up" %>
+  </div>
+<% end %><br>
 
 <%= render "devise/shared/links" %>

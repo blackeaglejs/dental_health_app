@@ -1,0 +1,25 @@
+<% form_for @profile do |f| %>
+	<div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %> 
+  </div>
+<br>
+  <div class="field">
+    <%= f.label "I am a..." %>
+    <%= f.select(:role, [['Patient',1],['Parent',2],['Dental Staff',3]]) %>.
+  </div>
+<br>
+  <div class="field">
+  	<%= f.label "If you are Dental staff, please enter in your passcode." %>
+  	<%= f.text_field :passcode %>
+  </div>
+<br>
+  <div class="field">
+    <%= f.label 'My phone number is...' %>
+    <%= f.text_field :phone %>
+  </div>
+<br>
+  <div class="actions">
+    <%= f.submit "Save" %>
+  </div>
+  <% end %>

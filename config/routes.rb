@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'dental#index'
   resources :dental
 
-  #These routes are for the tutorial 
+  #These routes are for the tutorial. 
   get '/babyteeth' => 'tutorial#babyteeth'
   get '/cav_intro' => 'tutorial#cav_intro'
   get '/cav_form_1' => 'tutorial#cav_form_1'
@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   get '/cav_prev_1' => 'tutorial#cav_prev_1'
   get '/cav_prev_2' => 'tutorial#cav_prev_2'
   get '/cav_prev_3' => 'tutorial#cav_prev_3'
+
+  #These routes are for the profile. 
+  resources :profiles
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
