@@ -1,3 +1,8 @@
+<% if user_signed_in? %>
+	<#%= @user.profile.name %><br>
+	<#%= @user.email %><br>
+	<%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %>
+<% end %>
 <h1>Taking Care of your Child's Teeth: An Introduction</h1>
 
 <% if !user_signed_in? %>
@@ -5,6 +10,7 @@
 	<p>Coming back to add more data? <%= link_to "Please sign in!", new_user_session_path %></p>
 <% else %>
 	<p><%= link_to "Create Your Profile", new_profile_path %></p>
+	<p><%= link_to "Edit Your Profile", edit_profile_path %></p>
 	<p>Enter new brushing/flossing/mouthwash records</p>
 	<p>View all of brushing/flossing/mouthwsahing records</p>
 <% end %>
