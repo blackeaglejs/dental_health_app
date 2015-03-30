@@ -1,0 +1,7 @@
+<h1>My Children</h1>
+
+<% @children.each do |child| %>
+	<p><%= child.name %></p>
+<% end %>
+
+<%= link_to "Add a Child", new_profile_child_path %>

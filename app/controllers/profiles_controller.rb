@@ -30,9 +30,7 @@ class ProfilesController < ApplicationController
 	end
 
 	def update
-		binding.pry
 		@passcode = params[:passcode]
-		params["profile"]["role"].to_i
 		if params[:role].to_i == 3 and params[:passcode] == "septocaine"
 			@profile.update(profile_params)
 		elsif params[:role].to_i != 3

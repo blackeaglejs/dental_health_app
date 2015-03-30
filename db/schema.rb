@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150328172611) do
+ActiveRecord::Schema.define(version: 20150330025253) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "children", force: :cascade do |t|
+    t.string  "name"
+    t.integer "profile_id"
+    t.integer "birth_year"
+    t.integer "birth_month"
+    t.integer "birth_date"
+  end
+
+  add_index "children", ["profile_id"], name: "index_children_on_profile_id", using: :btree
 
   create_table "profiles", force: :cascade do |t|
     t.string  "name"

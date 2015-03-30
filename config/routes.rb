@@ -15,7 +15,11 @@ Rails.application.routes.draw do
   get '/cav_prev_3' => 'tutorial#cav_prev_3'
 
   #These routes are for the profile. 
-  resources :profiles
+  resources :profiles do
+    resources :children
+  end
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

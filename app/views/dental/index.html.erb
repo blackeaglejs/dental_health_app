@@ -15,8 +15,7 @@
 <% else %>
 	<p><%= link_to "View Your Profile", profile_path(@profile) %></p>
 <% end %>
-	<p>Enter new brushing/flossing/mouthwash records</p>
-	<p>View all of brushing/flossing/mouthwsahing records</p>
+<p><%= link_to "My Children", profile_children_path(@profile) %></p>
 <% end %>
 
 <%= link_to "Take the Tutorial!", babyteeth_path %>
