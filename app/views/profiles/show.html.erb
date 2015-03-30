@@ -1,0 +1,8 @@
+<h1>Your Profile</h1>
+
+Name: <%= @profile.name %><br>
+E-mail: <%= @user.email %><br>
+Role: <%= @profile.role %><br>
+Phone: <%= @profile.phone %><br><br>
+
+<%= link_to 'Edit Your Profile', edit_profile_path(@profile) %>

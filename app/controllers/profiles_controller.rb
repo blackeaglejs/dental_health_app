@@ -1,8 +1,8 @@
 class ProfilesController < ApplicationController
 	before_action :load_user
+	before_action :load_profile
 	def new
 		@profile = Profile.new
-		binding.pry
 	end
 
 	def create
@@ -22,34 +22,37 @@ class ProfilesController < ApplicationController
 		end
 	end
 
-	# def update
-	# 	@email = User.email
-	# 	@user = user.find_by(email: @email)
-	# 	if params[role].to_i == 3 and params[:passcode] == "septocaine"
-	# 		user.update({:role => params[:role].to_i}, {params[:name] => :name}, {params[:phone] => :phone})
-	# 	elsif params[role].to_i == 4 and params[:passcode] == "fuckrobbie"
-	# 		user.update({:role => params[:role].to_i}, {params[:name] => :name}, {params[:phone] => :phone})
-	# end
+	def show
+		@profile = Profile.find(@profile.id)
+	end
 
 	def edit
+	end
+
+	def update
+		binding.pry
 		@passcode = params[:passcode]
+		params["profile"]["role"].to_i
 		if params[:role].to_i == 3 and params[:passcode] == "septocaine"
-			@profile.update_attributes(profile_params)
+			@profile.update(profile_params)
 		elsif params[:role].to_i != 3
-			@profile.save
+			@profile.update(profile_params)
 		end
-		if @profile.update_attributes(profile_params)
+		if @profile.update(profile_params)
 			redirect_to dental_index_path
 		else
 			redirect_to edit_profile_path
-		end
-		
+		end	
 	end
 
 	private
 
 	def load_user
 		@user = current_user
+	end
+
+	def load_profile
+		@profile = Profile.find(params[:id])
 	end
 
 	def profile_params
