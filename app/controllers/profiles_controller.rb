@@ -27,10 +27,12 @@ class ProfilesController < ApplicationController
 	end
 
 	def edit
+		binding.pry
+		@role = current_user.profile.role
 	end
 
 	def update
-		@passcode = params[:passcode]
+		# @passcode = params[:passcode]
 		if params[:role].to_i == 3 and params[:passcode] == "septocaine"
 			@profile.update(profile_params)
 		elsif params[:role].to_i != 3

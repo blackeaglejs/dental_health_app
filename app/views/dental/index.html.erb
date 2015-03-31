@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
-	<#%= @user.profile.name %><br>
-	<#%= @user.email %><br>
+	<%= @user.profile.name %><br>
+	<%= @user.email %><br>
 	<%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %>
 <% end %>
 <h1>Taking Care of your Child's Teeth: An Introduction</h1>
@@ -15,7 +15,9 @@
 <% else %>
 	<p><%= link_to "View Your Profile", profile_path(@profile) %></p>
 <% end %>
-<p><%= link_to "My Children", profile_children_path(@profile) %></p>
+	<% if current_user.profile.role == 'p_parent' %>
+		<p><%= link_to "My Children", profile_children_path(@profile) %></p>
+	<% end %>
 <% end %>
 
 <%= link_to "Take the Tutorial!", babyteeth_path %>

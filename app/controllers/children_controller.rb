@@ -3,6 +3,8 @@ class ChildrenController < ApplicationController
 	before_action :load_profile
 	def index
 		@children = Child.all.order(:name)
+		binding.pry
+		@child = @profile.children
 	end
 
 	def new
@@ -10,7 +12,6 @@ class ChildrenController < ApplicationController
 	end
 
 	def create
-		binding.pry
 		@child = Child.new(child_params)
 		@child.profile = @profile
 		@child.save
@@ -19,6 +20,10 @@ class ChildrenController < ApplicationController
 		else
 			redirect_to new_profile_child_path
 		end
+	end
+
+	def show
+		# @child = @profile.children.find(params[:id])
 	end
 
 	private

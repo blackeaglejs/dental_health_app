@@ -1,7 +1,8 @@
 <h1>My Children</h1>
 
 <% @children.each do |child| %>
-	<p><%= child.name %></p>
+	<% binding.pry %>
+	<p><%= link_to child.name, profile_child_path(@profile, @child) %></p>
 <% end %>
 
 <%= link_to "Add a Child", new_profile_child_path %>
