@@ -1,10 +1,14 @@
 class ChildrenController < ApplicationController
 	before_action :load_user
 	before_action :load_profile
+	before_action :load_child
+
 	def index
-		@children = Child.all.order(:name)
-		binding.pry
+		@children = @profile.children.all.order(:name)
 		@child = @profile.children
+	end
+
+	def staff_index
 	end
 
 	def new
@@ -23,7 +27,7 @@ class ChildrenController < ApplicationController
 	end
 
 	def show
-		# @child = @profile.children.find(params[:id])
+		@children = Child.all
 	end
 
 	private
@@ -34,6 +38,10 @@ class ChildrenController < ApplicationController
 
 	def load_profile
 		@profile = Profile.find(current_user.profile)
+	end
+
+	def load_child
+		@child = @profile.children.find_by(params[:name])
 	end
 
 	def child_params

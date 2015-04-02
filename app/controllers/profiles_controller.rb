@@ -1,6 +1,11 @@
 class ProfilesController < ApplicationController
 	before_action :load_user
-	before_action :load_profile
+	before_action :load_profile, except: [:index]
+
+	def index
+		@profiles = Profile.all
+	end
+
 	def new
 		@profile = Profile.new
 	end
@@ -27,7 +32,6 @@ class ProfilesController < ApplicationController
 	end
 
 	def edit
-		binding.pry
 		@role = current_user.profile.role
 	end
 
@@ -52,10 +56,12 @@ class ProfilesController < ApplicationController
 	end
 
 	def load_profile
-		@profile = Profile.find(params[:id])
+		if @user.profile
+			@profile = Profile.find(params[:id])
+		end
 	end
 
 	def profile_params
-		params.require(:profile).permit(:name, :role, :phone)
+		params.require(:profile).permit(:name, :role, :phone, :passcode)
 	end
 end
