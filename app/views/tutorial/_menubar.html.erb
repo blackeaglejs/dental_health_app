@@ -1,0 +1,28 @@
+	<header>
+		<% if !user_signed_in? %>
+		<div class="nav">
+			<ul>
+				<li><%= link_to 'Home', dental_index_path %></li>
+				<li><%= link_to 'Sign Up', new_user_registration_path %></li>
+				<li><%= link_to "Sign In", new_user_session_path %></li>
+			</ul>
+		<% end %>
+		</div>
+		<% if user_signed_in? and current_user.profile and current_user.profile.role == 'p_parent' %>
+		<div class="nav">
+			<ul>
+				<li><%= link_to 'Home', dental_index_path %></li>
+				<li><%= link_to "Profile", profile_path(@profile) %></li>
+				<li><%= link_to "My Children", profile_children_path(@profile) %></li>
+		</div>
+		<% end %>
+		<% if user_signed_in? and current_user.profile and current_user.profile.role == 'staff' %>
+		<div class="nav">
+			<ul>
+				<li><%= link_to 'Home', dental_index_path %></li>
+				<li><%= link_to "Profile", profile_path(@profile) %></li>
+				<li><%= link_to "View All Parents", profiles_path %></li>
+			</ul>
+		</div>
+		<% end %>
+	</header>

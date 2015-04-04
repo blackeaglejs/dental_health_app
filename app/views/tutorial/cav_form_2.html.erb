@@ -1,3 +1,4 @@
+<%= render 'menubar' %>
 <h2>Cavities</h2>
 <h3>How do they form?</h3>
 <h4>Diet</h4>
@@ -7,5 +8,12 @@
 <%= image_tag "cocacola.JPG" %>
 <%= image_tag "orange_juice.JPG" %>
 <br><br><br><br>
-<align="left"><%= link_to "Cavity Formation: Part 1", cav_form_1_path %></align>
-<align="right"><%= link_to "Cavity Formation: Part 3", cav_form_3_path %></align>
+
+<header>
+<div class="tut-nav">
+	<ul>
+		<li><%= link_to "Cavity Formation: Part 1", cav_form_1_path %></li>
+		<li><%= link_to "Cavity Formation: Part 3", cav_form_3_path %><li>
+	</ul>
+</div>
+</header>

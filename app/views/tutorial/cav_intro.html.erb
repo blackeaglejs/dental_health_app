@@ -1,6 +1,14 @@
+<%= render 'menubar' %>
+
 <h2>Cavities</h2>
 <h3>What are they?</h3>
 Bacteria in our mouth break down sugars and produce acid leading to cavities. Cavities appear as white, yellow, brown, or black spots on the front or tops of teeth.
-<br>
-<align="left"><%= link_to "Back to baby teeth", babyteeth_path %></align>
-<align="right"><%= link_to "Next: How do they form?", cav_form_1_path %></align>
+
+<header>
+<div class="tut-nav">
+	<ul>
+		<li><%= link_to "Back to baby teeth", babyteeth_path %></li>
+		<li><%= link_to "Next: How do they form?", cav_form_1_path %><li>
+	</ul>
+</div>
+</header>

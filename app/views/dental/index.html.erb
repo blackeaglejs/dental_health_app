@@ -1,8 +1,37 @@
-<% if user_signed_in? and @user.profile %>
-	<%= @user.profile.name %><br>
-	<%= @user.email %><br>
-	<%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %>
-<% end %>
+<html>
+<head>
+	<title>Taking Care of Your Child's Teeth</title>
+</head>
+<body>
+	<header>
+		<% if !user_signed_in? %>
+		<div class="nav">
+			<ul>
+				<li><%= link_to 'Home', dental_index_path %></li>
+				<li><%= link_to 'Sign Up', new_user_registration_path %></li>
+				<li><%= link_to "Sign In", new_user_session_path %></li>
+			</ul>
+		<% end %>
+		</div>
+		<% if user_signed_in? and current_user.profile and current_user.profile.role == 'p_parent' %>
+		<div class="nav">
+			<ul>
+				<li><%= link_to 'Home', dental_index_path %></li>
+				<li><%= link_to "Profile", profile_path(@profile) %></li>
+				<li><%= link_to "My Children", profile_children_path(@profile) %></li>
+		</div>
+		<% end %>
+		<% if user_signed_in? and current_user.profile and current_user.profile.role == 'staff' %>
+		<div class="nav">
+			<ul>
+				<li><%= link_to 'Home', dental_index_path %></li>
+				<li><%= link_to "Profile", profile_path(@profile) %></li>
+				<li><%= link_to "View All Parents", profiles_path %></li>
+
+			</ul>
+		</div>
+		<% end %>
+	</header>
 <h1>Taking Care of your Child's Teeth: An Introduction</h1>
 
 <% if !user_signed_in? %>
@@ -24,5 +53,17 @@
 	<% end %>
 <% end %>
 
-<%= link_to "Take the Tutorial!", babyteeth_path %>
-
+<%= link_to "Take the Tutorial!", babyteeth_path %><br><br>
+<header>
+<div class="user-info">
+	<ul>
+		<% if user_signed_in? and @user.profile %>
+			<li><%= @user.profile.name %></li>
+			<li><%= @user.email %></li>
+			<li><%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %></li>
+		<% end %>
+	</ul>
+</div>
+</header>
+</body>
+</html>
