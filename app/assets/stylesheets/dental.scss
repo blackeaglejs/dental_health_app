@@ -2,13 +2,26 @@
 body {
 	margin: 0;
 	padding: 0;
-	background: #ccc;
+	background: #678B97;
+	font-size: 22px;
+	color: #1c1a7d;
 }
 
 h1 {
   font-family: 'Oswald', sans-serif;
   font-size: 40px;
   text-align: center;
+
+}
+
+h2 {
+	font-family: 'Oswald', sans-serif;
+	font-size: 32px;
+}
+
+h3 {
+	font-family: 'Oswald', sans-serif;
+	font-size: 26px;
 }
 
 body {
@@ -31,7 +44,7 @@ a:hover {
 .nav ul {
 	width: 100%;
 	list_style: none;
-	background-color: #444;
+	background-color: #783853;
 	text-align: center;
 	padding: 0;
 	margin: 0 auto;
@@ -59,7 +72,7 @@ a:hover {
 .tut-nav ul {
 	width: 100%;
 	list_style: none;
-	background-color: #444;
+	background-color: #783853;
 	text-align: center;
 	padding: 0;
 	margin: 0;
@@ -86,7 +99,7 @@ a:hover {
 
 .user-info ul {
 	list_style: none;
-	background-color: #444;
+	background-color: #783853;
 	text-align: center;
 	padding: 0;
 	margin: 0;
